@@ -19,14 +19,16 @@ import java.util.List;
 @RestController
 @RequestMapping
 public class CourseController {
-    @Autowired // IOC
+
+    @Autowired // IOC 控制反转
     CourseService courseService; // Singleton
+    //依赖注入 Dependency Injection
 
-    @GetMapping(path = "/", produces = "application/json")
+    @GetMapping(path = "/", produces = "application/json") //如果你用get方法 call我这个地址
     public HttpEntity findAllCourses(){
-        List<Course> allCourses = courseService.findAllCourses();
+        List<Course> allCourses = courseService.findAllCourses(); //我就帮你用这个方法来处理这个请求
 
-        return new ResponseEntity<>(allCourses,HttpStatus.OK);
+        return new ResponseEntity<>(allCourses,HttpStatus.OK); // 我返回结果给你
     }
 
 //    @GetMapping(path = "/api/course/findAllCourses", produces = "application/json")
@@ -44,3 +46,5 @@ public class CourseController {
         return new ResponseEntity(findedCourse, HttpStatus.OK);
     }
 }
+
+// 增加一个课程/删除一个课程/更新一个课程信息

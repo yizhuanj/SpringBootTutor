@@ -12,9 +12,17 @@ import java.util.List;
 public class CourseRepository {
     List<Course> courses = new ArrayList<>();
 
+    // constructor
     public CourseRepository() {
         Course javaOne = Course.builder()
                 .className("Java I")
+                .instructor(new Instructor("Steve", "Jobs", "Phd", "TownHall201"))
+                .startDate(new Date("8/1/2018"))
+                .endDate(new Date("12/24/2018"))
+                .timeFrame("8am-10am")
+                .build();
+        Course two= Course.builder()
+                .className("Java II")
                 .instructor(new Instructor("Steve", "Jobs", "Phd", "TownHall201"))
                 .startDate(new Date("8/1/2018"))
                 .endDate(new Date("12/24/2018"))
