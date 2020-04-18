@@ -21,15 +21,16 @@ public class CourseRepository {
                 .endDate(new Date("12/24/2018"))
                 .timeFrame("8am-10am")
                 .build();
-        Course two= Course.builder()
+        Course javaTwo= Course.builder()
                 .className("Java II")
-                .instructor(new Instructor("Steve", "Jobs", "Phd", "TownHall201"))
+                .instructor(new Instructor("Jake", "Johns", "Phd", "TownHall302"))
                 .startDate(new Date("8/1/2018"))
                 .endDate(new Date("12/24/2018"))
-                .timeFrame("8am-10am")
+                .timeFrame("3pm-5pm")
                 .build();
 
         courses.add(javaOne);
+        courses.add(javaTwo);
     }
 
 

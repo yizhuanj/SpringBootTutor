@@ -8,10 +8,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,9 +17,9 @@ import java.util.List;
 @RequestMapping
 public class CourseController {
 
-    @Autowired // IOC 控制反转
+    @Autowired //1、Autowired 既实现了 IOC=inverse of control=控制反转，并由spring bean来管理lifecycle(什么时候产生，什么时候销毁) 2、还实现了 依赖注入=Dependency Injection，依赖于courseService
     CourseService courseService; // Singleton
-    //依赖注入 Dependency Injection
+
 
     @GetMapping(path = "/", produces = "application/json") //如果你用get方法 call我这个地址
     public HttpEntity findAllCourses(){
@@ -45,6 +42,10 @@ public class CourseController {
 
         return new ResponseEntity(findedCourse, HttpStatus.OK);
     }
+
+//    @PostMapping()
+//    @DeleteMapping()
+//    @
 }
 
 // 增加一个课程/删除一个课程/更新一个课程信息
