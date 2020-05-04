@@ -1,8 +1,8 @@
 package com.example.demo;
 
 import com.example.demo.modal.Course;
-import com.example.demo.repository.CourseRepository;
-import com.example.demo.service.CourseService;
+import com.example.demo.repository.TwoSumRepository;
+import com.example.demo.service.TwoSumService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -15,20 +15,20 @@ import static junit.framework.TestCase.assertTrue;
 import static org.mockito.BDDMockito.given;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CourseServiceUnitTest {
+public class TwoSumServiceUnitTest {
     @Mock
-    private CourseService courseService;
+    private TwoSumService twoSumService;
 
     @Mock
-    private CourseRepository courseRepository;
+    private TwoSumRepository twoSumRepository;
 
     @Test
     public void testCourseService(){
         List<Course> courseList = new ArrayList<>();
 
-        given(courseRepository.findAllClasses()).willReturn(courseList);
+        given(twoSumRepository.findAllClasses()).willReturn(courseList);
 
-        List<Course> result = courseService.findAllCourses();
+        List<Course> result = twoSumService.findAllCourses();
 
         assertTrue(result.isEmpty());
     }

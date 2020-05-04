@@ -9,11 +9,11 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public class CourseRepository {
+public class TwoSumRepository {
     List<Course> courses = new ArrayList<>();
 
     // constructor
-    public CourseRepository() {
+    public TwoSumRepository() {
         Course javaOne = Course.builder()
                 .className("Java I")
                 .instructor(new Instructor("Steve", "Jobs", "Phd", "TownHall201"))
