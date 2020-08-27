@@ -24,9 +24,11 @@ public class TwoSumServiceUnitTest {
 
     @Test
     public void testCourseService(){
-        List<Course> courseList = new ArrayList<>();
+//        List<Course> courseList = new ArrayList<>();
+        int[] numPair = new int[2];
 
         given(twoSumRepository.findAllClasses()).willReturn(courseList);
+//        given(twoSumRepository.getNums().willReturn(numPair));
 
         List<Course> result = twoSumService.findAllCourses();
 
